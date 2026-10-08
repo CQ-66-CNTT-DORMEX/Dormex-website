@@ -1,0 +1,508 @@
+/* =========================================================
+   SMART DORM - CSS RIÊNG CHO MỤC "NỘI QUY"
+   (luôn nạp SAU style.css để dùng lại biến màu chung)
+   ========================================================= */
+
+/* ---------- Banner ---------- */
+.rules-hero {
+  display: flex;
+  align-items: center;
+  min-height: 215px;
+}
+.rules-hero .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 54%;
+}
+.hero-eyebrow {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.hero-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0 6px;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--primary);
+}
+.hero-title i {
+  font-size: 48px;
+}
+.hero-sub {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+.hero-hand {
+  position: absolute;
+  top: 12px;
+  right: 34px;
+  z-index: 3;
+  font-family: var(--font-hand);
+  font-size: 21px;
+  line-height: 1.1;
+  color: var(--primary);
+  transform: rotate(-8deg);
+  text-align: center;
+}
+.hero-building {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  max-width: 400px;
+  height: auto;
+}
+.cloud.c1 { width: 90px; height: 26px; top: 28px; left: 42%; }
+.cloud.c1::before { width: 40px; height: 40px; top: -18px; left: 14px; }
+.cloud.c1::after  { width: 30px; height: 30px; top: -10px; left: 44px; }
+.cloud.c2 { width: 70px; height: 20px; top: 70px; left: 6%; opacity: 0.7; }
+.cloud.c2::before { width: 30px; height: 30px; top: -14px; left: 10px; }
+.cloud.c2::after  { width: 24px; height: 24px; top: -8px; left: 34px; }
+
+/* ---------- Hai thẻ giờ mở / đóng cổng ---------- */
+.gate-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.gate-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gate-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+.gate-card.open  { background: var(--green-bg); }
+.gate-card.close { background: var(--pink-bg); }
+.gate-icon {
+  flex: 0 0 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 28px;
+}
+.gate-card.open  .gate-icon { color: var(--green); }
+.gate-card.close .gate-icon { color: var(--pink); }
+.gate-label {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+}
+.gate-time {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--primary-dark);
+}
+.gate-time small {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+.gate-desc {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+}
+.gate-tag {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+/* ---------- Thanh công cụ: lọc + nút ---------- */
+.rules-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.rules-head .card-title {
+  margin: 0;
+  flex: 1 1 auto;
+}
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btn-sm {
+  padding: 7px 13px;
+  font-size: 13px;
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 6px;
+}
+.chip {
+  padding: 8px 15px;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 800;
+  background: #f1f5fc;
+  color: var(--primary-dark);
+  transition: all 0.2s;
+}
+.chip:hover {
+  background: var(--primary-soft);
+}
+.chip.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(31, 85, 196, 0.28);
+}
+.result-info {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 6px 2px 10px;
+}
+
+/* ---------- Danh sách điều khoản (accordion) ---------- */
+.rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rule {
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.rule:hover {
+  border-color: #c6d9f6;
+}
+.rule.open {
+  border-color: #b3cdf5;
+  background: #fbfdff;
+  box-shadow: 0 6px 16px rgba(40, 80, 160, 0.09);
+}
+.rule[hidden] {
+  display: none;
+}
+.rule-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 0;
+  background: none;
+  text-align: left;
+  color: var(--text);
+}
+.rule-num {
+  flex: 0 0 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 17px;
+}
+.rule-title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.rule-tag {
+  flex: 0 0 auto;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 800;
+}
+.rule-arrow {
+  color: var(--primary);
+  transition: transform 0.25s;
+}
+.rule.open .rule-arrow {
+  transform: rotate(180deg);
+}
+
+/* màu theo nhóm */
+.t-cutru   .rule-num, .t-cutru   .rule-tag { background: var(--blue-bg);   color: var(--blue); }
+.t-vesinh  .rule-num, .t-vesinh  .rule-tag { background: var(--green-bg);  color: var(--green); }
+.t-antoan  .rule-num, .t-antoan  .rule-tag { background: var(--yellow-bg); color: #c98408; }
+.t-vanhoa  .rule-num, .t-vanhoa  .rule-tag { background: var(--purple-bg); color: var(--purple); }
+.t-anninh  .rule-num, .t-anninh  .rule-tag { background: var(--pink-bg);   color: var(--pink); }
+
+.chip.t-all.active { background: var(--primary); }
+
+/* thân điều khoản - hiệu ứng mở mượt */
+.rule-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+.rule.open .rule-body {
+  grid-template-rows: 1fr;
+}
+.rule-body > div {
+  overflow: hidden;
+}
+.rule-content {
+  padding: 0 18px 16px 70px;
+  font-size: 15px;
+  color: #2c3f69;
+}
+.rule-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.rule-content li {
+  position: relative;
+  padding-left: 22px;
+}
+.rule-content li::before {
+  content: "\f058"; /* check-circle */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 1px;
+  font-size: 14px;
+  color: var(--green);
+}
+.rule-content li.no::before {
+  content: "\f057"; /* times-circle */
+  color: var(--pink);
+}
+.rule-content p {
+  line-height: 1.6;
+}
+mark {
+  background: #fff1a8;
+  color: inherit;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 26px 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+.empty i {
+  display: block;
+  font-size: 36px;
+  color: #b8cbec;
+  margin-bottom: 8px;
+}
+.empty.show {
+  display: block;
+}
+
+/* ---------- Xử lý vi phạm + ký tên ---------- */
+.penalty {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #fff6e0, #ffeef0);
+}
+.penalty-icon {
+  flex: 0 0 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--pink);
+  font-size: 24px;
+  box-shadow: 0 3px 10px rgba(232, 71, 95, 0.2);
+}
+.penalty h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #b3263e;
+  margin-bottom: 4px;
+}
+.penalty p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.issuer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.issuer .org {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--muted);
+  max-width: 330px;
+}
+.issuer .org strong {
+  display: block;
+  color: var(--primary-dark);
+  font-size: 14.5px;
+}
+.signature {
+  text-align: center;
+  min-width: 220px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  font-size: 14px;
+}
+.signature .signed {
+  font-family: var(--font-hand);
+  font-size: 26px;
+  color: var(--primary);
+  margin: 6px 0;
+}
+.signature .signed i {
+  font-size: 15px;
+  color: var(--green);
+}
+.signature .name {
+  font-size: 15px;
+}
+
+/* ---------- Cột phải ---------- */
+.gate-status {
+  text-align: center;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 14px;
+}
+.status-pill .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 1.6s infinite;
+}
+.status-pill.is-open   { background: var(--green-bg); color: var(--green); }
+.status-pill.is-closed { background: var(--pink-bg);  color: var(--pink); }
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 currentColor; }
+  70%  { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.clock {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 12px 0 2px;
+  font-variant-numeric: tabular-nums;
+}
+.clock-date {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.countdown {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.progress {
+  margin-top: 12px;
+  height: 8px;
+  border-radius: 8px;
+  background: #e6eefb;
+  overflow: hidden;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4f8cf0, var(--primary));
+  transition: width 0.6s ease;
+}
+
+.remember li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-bottom: 1px dashed #dbe5f6;
+}
+.remember li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.remember .ic {
+  flex: 0 0 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  font-size: 15px;
+}
+.ic.b { background: var(--blue-bg);   color: var(--blue); }
+.ic.p { background: var(--pink-bg);   color: var(--pink); }
+.ic.g { background: var(--green-bg);  color: var(--green); }
+.ic.y { background: var(--yellow-bg); color: #c98408; }
+.ic.v { background: var(--purple-bg); color: var(--purple); }
+
+.contact p {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #2c3f69;
+}
+.contact .btn {
+  margin-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------- Responsive riêng ---------- */
+@media (max-width: 900px) {
+  .rules-hero .hero-text { max-width: 100%; }
+  .hero-building { opacity: 0.35; width: 70%; }
+  .hero-hand { display: none; }
+  .hero-title { font-size: 40px; }
+  .hero-title i { font-size: 36px; }
+}
+@media (max-width: 640px) {
+  .gate-grid { grid-template-columns: 1fr; }
+  .rule-tag { display: none; }
+  .rule-content { padding-left: 18px; }
+  .gate-time { font-size: 30px; }
+}
