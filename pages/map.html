@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sơ đồ KTX - Smart Dorm</title>
+
+    <!-- Font chữ + icon đồng bộ với hệ thống -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap&subset=vietnamese"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- CSS: chung và riêng cho Sơ đồ -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/so-do.css" />
+  </head>
+  <body>
+    <!-- SVG tòa nhà KTX tái sử dụng từ bản vẽ gốc -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <pattern id="win" width="22" height="26" patternUnits="userSpaceOnUse">
+          <rect x="5" y="6" width="12" height="14" rx="1.5" fill="#5f95e8" />
+        </pattern>
+      </defs>
+      <symbol id="dorm" viewBox="0 0 420 200">
+        <circle cx="30" cy="140" r="34" fill="#6fb877" />
+        <circle cx="58" cy="120" r="30" fill="#82c78a" />
+        <circle cx="395" cy="135" r="34" fill="#6fb877" />
+        <circle cx="372" cy="150" r="28" fill="#82c78a" />
+        <rect x="62" y="104" width="100" height="86" fill="#f4d6c0" />
+        <rect x="62" y="98" width="100" height="8" fill="#e9b99c" />
+        <rect x="70" y="112" width="84" height="72" fill="url(#win)" />
+        <rect x="160" y="48" width="170" height="142" fill="#f7dcc8" />
+        <rect x="156" y="42" width="178" height="10" fill="#e5ad8c" />
+        <rect x="168" y="58" width="154" height="116" fill="url(#win)" />
+        <rect x="328" y="86" width="64" height="104" fill="#f4d6c0" />
+        <rect x="324" y="80" width="72" height="8" fill="#e9b99c" />
+        <rect x="334" y="94" width="52" height="86" fill="url(#win)" />
+        <rect x="220" y="150" width="50" height="40" rx="3" fill="#3f6fcf" />
+        <rect x="244" y="150" width="2" height="40" fill="#fff" />
+        <rect x="0" y="188" width="420" height="12" fill="#8fcf8f" />
+        <ellipse cx="190" cy="190" rx="26" ry="9" fill="#5fae6a" />
+        <ellipse cx="300" cy="190" rx="26" ry="9" fill="#5fae6a" />
+      </symbol>
+    </svg>
+
+    <div class="app">
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-house-chimney-window logo-icon"></i>
+          <div class="logo-text">
+            <strong>Smart Dorm</strong>
+            <small>KTX thông minh - Cuộc sống tiện nghi</small>
+          </div>
+        </a>
+
+        <nav class="menu">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+          <a href="phong-o.html"><i class="fa-solid fa-bed"></i> Phòng ở</a>
+          <a href="thong-bao.html"><i class="fa-solid fa-bullhorn"></i> Thông báo <span class="badge">3</span></a>
+          <a href="bao-sua-chua.html"><i class="fa-solid fa-wrench"></i> Báo sửa chữa</a>
+          <a href="tien-phong.html"><i class="fa-solid fa-circle-dollar-to-slot"></i> Tiền phòng</a>
+          <a href="su-kien.html"><i class="fa-solid fa-calendar-days"></i> Sự kiện</a>
+          <a href="noi-quy.html"><i class="fa-solid fa-book-open"></i> Nội quy</a>
+          <!-- Trang Sơ đồ đang kích hoạt -->
+          <a href="so-do-ktx.html" class="active" aria-current="page"><i class="fa-solid fa-map-location-dot"></i> Sơ đồ KTX</a>
+          <a href="tai-khoan.html"><i class="fa-solid fa-user"></i> Tài khoản</a>
+        </nav>
+
+        <div class="sidebar-deco">
+          <p class="quote">
+            KTX<br />&nbsp;&nbsp;Là nhà<br />cùng là thanh xuân ♡
+          </p>
+          <svg viewBox="0 0 420 200"><use href="#dorm" /></svg>
+        </div>
+      </aside>
+      <div class="overlay" id="overlay"></div>
+
+      <!-- ===================== MAIN WRAP ===================== -->
+      <div class="main-wrap">
+        <header class="topbar">
+          <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="mapSearch"
+              placeholder="Tìm kiếm tòa nhà, khu tiện ích..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="top-right">
+            <button class="bell" aria-label="Thông báo">
+              <i class="fa-solid fa-bell"></i><span class="badge">3</span>
+            </button>
+            <div class="user">
+              <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="user-info">
+                <strong>Nguyễn Phúc Khai Tâm</strong>
+                <small>MSSV: 6651071065</small>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+          </div>
+        </header>
+
+        <main class="content">
+          <!-- CỘT TRÁI / GIỮA -->
+          <div class="col-main">
+            <!-- Hero Banner -->
+            <section class="hero map-hero">
+              <span class="cloud c1"></span>
+              <span class="cloud c2"></span>
+              <div class="hero-text">
+                <p class="hero-eyebrow">Smart Dorm</p>
+                <h1 class="hero-title">
+                  <i class="fa-solid fa-map-location-dot"></i> Sơ Đồ Khuôn Viên KTX
+                </h1>
+                <p class="hero-sub">
+                  Bản đồ trực quan các tòa nhà nội trú và tiện ích sinh hoạt.
+                </p>
+              </div>
+              <p class="hero-hand">
+                Không gian xanh<br />Tiện nghi & Hiện đại ♡
+              </p>
+              <svg class="hero-building" viewBox="0 0 420 200">
+                <use href="#dorm" />
+              </svg>
+            </section>
+
+            <!-- KHUNG SƠ ĐỒ MẶT BẰNG CHÍNH (THEO HÌNH MẪU) -->
+            <section class="card map-container-card">
+              <div class="card-header-flex">
+                <h2 class="card-title">
+                  <i class="fa-solid fa-compass"></i> Bản đồ mặt bằng tổng thể
+                </h2>
+                <span class="legend-note"><i class="fa-solid fa-hand-pointer"></i> Nhấp vào khu vực để xem chi tiết</span>
+              </div>
+
+              <!-- KHUNG BẢN ĐỒ CHỮ THẬP -->
+              <div class="campus-map" id="campusMap">
+                <!-- Đường đi trục ngang và trục dọc -->
+                <div class="road road-horizontal"></div>
+                <div class="road road-vertical"></div>
+
+                <!-- Tâm Quảng trường hình tròn -->
+                <div class="square-center" id="node-quang-truong" data-id="quang-truong">
+                  <span>Quảng Trường</span>
+                </div>
+
+                <!-- 4 GÓC KHUÔN VIÊN -->
+                <!-- 1. Góc trên trái: TÒA A -->
+                <div class="map-zone zone-top-left">
+                  <div class="block-box block-toa-a" data-id="toa-a">
+                    <h3>TÒA A</h3>
+                    <p>Ký Túc Xá Nam (5 Tầng)</p>
+                  </div>
+                </div>
+
+                <!-- 2. Góc trên phải: TÒA B -->
+                <div class="map-zone zone-top-right">
+                  <div class="block-box block-toa-b" data-id="toa-b">
+                    <h3>TÒA B</h3>
+                    <p>Ký Túc Xá Nữ (5 Tầng)</p>
+                  </div>
+                </div>
+
+                <!-- 3. Góc dưới trái: TÒA C -->
+                <div class="map-zone zone-bottom-left">
+                  <div class="block-box block-toa-c" data-id="toa-c">
+                    <h3>TÒA C</h3>
+                    <p>Chất Lượng Cao (7 Tầng)</p>
+                  </div>
+                </div>
+
+                <!-- 4. Góc dưới phải: CĂN TIN, SÂN BÓNG, BẢO VỆ -->
+                <div class="map-zone zone-bottom-right">
+                  <div class="service-grid">
+                    <div class="block-box block-cantin" data-id="cantin">
+                      <h3>CĂN TIN</h3>
+                      <p>Nhà Ăn KTX</p>
+                    </div>
+                    <div class="service-sub-col">
+                      <div class="block-box block-sanbong" data-id="san-bong">
+                        <h4>SÂN BÓNG</h4>
+                      </div>
+                      <div class="block-box block-baove" data-id="bao-ve">
+                        <h4>BẢO VỆ</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!-- CỘT PHẢI: THÔNG TIN CHI TIẾT KHI CHỌN VÀ TIỆN ÍCH -->
+          <aside class="col-side">
+            <!-- Thẻ hiển thị thông tin khu vực được chọn -->
+            <section class="card building-info-card" id="buildingDetail">
+              <h2 class="card-title">
+                <i class="fa-solid fa-circle-info"></i> Thông tin khu vực
+              </h2>
+              <div class="detail-header" id="detailHeader">
+                <div class="detail-badge" id="detailBadge">A</div>
+                <div>
+                  <h3 id="detailTitle">Tòa A - KTX Nam</h3>
+                  <span class="status-tag" id="detailTag">Khu Nam</span>
+                </div>
+              </div>
+              <ul class="detail-list" id="detailList">
+                <li><i class="fa-solid fa-layer-group"></i> <strong>Quy mô:</strong> 5 Tầng (120 Phòng)</li>
+                <li><i class="fa-solid fa-users"></i> <strong>Sức chứa:</strong> 480 sinh viên (4 người/phòng)</li>
+                <li><i class="fa-solid fa-clock"></i> <strong>Giờ đóng/mở:</strong> 05:30 - 23:00</li>
+                <li><i class="fa-solid fa-shield-halved"></i> <strong>Trưởng nhà:</strong> Thầy Nguyễn Văn Q (P.101)</li>
+              </ul>
+              <div class="detail-action">
+                <a href="phong-o.html" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-list-ol"></i> Tra cứu danh sách phòng
+                </a>
+              </div>
+            </section>
+
+            <!-- Thống kê nhanh khuôn viên -->
+            <section class="card campus-stats">
+              <h2 class="card-title">
+                <i class="fa-solid fa-chart-pie"></i> Tổng quan khuôn viên
+              </h2>
+              <div class="stats-mini-grid">
+                <div class="stat-item">
+                  <span class="stat-num">3</span>
+                  <span class="stat-label">Tòa ký túc xá</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">320+</span>
+                  <span class="stat-label">Phòng ở sinh viên</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">1.200</span>
+                  <span class="stat-label">Chỗ nội trú</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-num">100%</span>
+                  <span class="stat-label">Camera an ninh</span>
+                </div>
+              </div>
+            </section>
+
+            <!-- Note chúc dễ thương giữ đồng bộ -->
+            <section class="cute-note">
+              <h4>Cố lên nhé!</h4>
+              <p>Khám phá trọn vẹn khuôn viên KTX xinh đẹp của chúng mình!</p>
+              <span class="cat">🐱</span>
+            </section>
+          </aside>
+        </main>
+
+        <footer class="footer">
+          © 2026 Smart Dorm - KTX thông minh, cuộc sống tiện nghi
+        </footer>
+      </div>
+    </div>
+
+    <!-- JS chung và JS cho Sơ đồ -->
+    <script src="../js/main.js"></script>
+    <script src="../js/so-do.js"></script>
+  </body>
+</html>

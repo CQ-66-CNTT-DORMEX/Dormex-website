@@ -2,885 +2,629 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nội quy KTX | Smart Dorm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nội quy - Smart Dorm</title>
+
+    <!-- Font chữ + icon -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap&subset=vietnamese"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --blue: #1d4ed8;
-        --navy: #12307a;
-        --sky: #eaf2fd;
-        --bg: #f1f6fd;
-        --card: #fff;
-        --line: #dfe8f6;
-        --muted: #5f6f8c;
-        --c-cutru: #e3edff;
-        --c-cutru-i: #2563eb;
-        --c-vesinh: #dcf5ec;
-        --c-vesinh-i: #0f9d6e;
-        --c-antoan: #fff0cf;
-        --c-antoan-i: #d98a00;
-        --c-anninh: #ffe1e3;
-        --c-anninh-i: #e0364a;
-        --r: 18px;
-        --shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-      }
-      body {
-        font-family: Nunito, "Segoe UI", system-ui, sans-serif;
-        background: var(--bg);
-        color: var(--navy);
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        min-height: 100vh;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-      :focus-visible {
-        outline: 3px solid #93b4ff;
-        outline-offset: 2px;
-      }
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
-      /* Sidebar */
-      .side {
-        background: linear-gradient(#f4f8ff, #e8f1fd);
-        border-right: 1px solid var(--line);
-        padding: 18px 14px;
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 4px 8px 18px;
-      }
-      .logo-ic {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
-        background: var(--blue);
-        display: grid;
-        place-items: center;
-        font-size: 24px;
-      }
-      .logo b {
-        display: block;
-        font-size: 26px;
-        color: var(--blue);
-        line-height: 1;
-      }
-      .logo small {
-        font-size: 10.5px;
-        color: var(--muted);
-        font-weight: 600;
-      }
-      .nav a {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        padding: 12px 16px;
-        margin-bottom: 6px;
-        border-radius: 14px;
-        font-weight: 700;
-        font-size: 16px;
-        color: #1c3a82;
-      }
-      .nav a:hover {
-        background: #dfeafb;
-      }
-      .nav a.on {
-        background: #dbe7fc;
-        box-shadow: inset 0 0 0 1px #c7d9f8;
-      }
-      .nav .badge {
-        margin-left: auto;
-        background: #ef4444;
-        color: #fff;
-        font-size: 12px;
-        border-radius: 8px;
-        padding: 1px 7px;
-      }
-      .side-foot {
-        margin-top: auto;
-        font-size: 18px;
-        color: var(--blue);
-        font-weight: 700;
-        line-height: 1.35;
-        padding: 10px 12px;
-        font-style: italic;
-      }
-
-      /* Main */
-      .main {
-        min-width: 0;
-      }
-      .top {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        padding: 14px 24px;
-        background: #fff;
-        border-bottom: 1px solid var(--line);
-        position: sticky;
-        top: 0;
-        z-index: 5;
-      }
-      .search {
-        flex: 1;
-        max-width: 520px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        border: 2px solid #cfe0fb;
-        border-radius: 14px;
-        padding: 9px 14px;
-        background: #f8fbff;
-      }
-      .search input {
-        border: 0;
-        background: none;
-        font: inherit;
-        width: 100%;
-        outline: none;
-        color: var(--navy);
-      }
-      .top .sp {
-        flex: 1;
-      }
-      .bell {
-        position: relative;
-        font-size: 22px;
-      }
-      .bell i {
-        position: absolute;
-        top: -6px;
-        right: -8px;
-        background: #ef4444;
-        color: #fff;
-        font: 700 11px Nunito;
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
-        display: grid;
-        place-items: center;
-      }
-      .user {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .avatar {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        background: #1f2937;
-        display: grid;
-        place-items: center;
-        font-size: 20px;
-      }
-      .user b {
-        display: block;
-        font-size: 15px;
-      }
-      .user small {
-        font-size: 12px;
-        color: var(--muted);
-      }
-
-      .wrap {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: 20px;
-        padding: 22px 24px 32px;
-      }
-      .card {
-        background: var(--card);
-        border-radius: var(--r);
-        box-shadow: var(--shadow);
-        border: 1px solid #e7eef9;
-      }
-
-      /* Hero */
-      .hero {
-        border-radius: var(--r);
-        overflow: hidden;
-        position: relative;
-        min-height: 190px;
-        background: linear-gradient(#8ec5f3, #cfe8fb 70%, #e9f5e4);
-        padding: 30px 34px;
-        box-shadow: var(--shadow);
-      }
-      .hero h1 {
-        font-size: 40px;
-        color: var(--blue);
-        line-height: 1.1;
-      }
-      .hero p {
-        margin-top: 8px;
-        font-size: 18px;
-        font-weight: 600;
-      }
-      .hero svg {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 52%;
-        height: 100%;
-      }
-      .hero .note {
-        position: absolute;
-        top: 18px;
-        right: 30px;
-        font-style: italic;
-        color: #2d5ab5;
-        font-weight: 700;
-        text-align: center;
-        line-height: 1.3;
-      }
-
-      /* Section titles */
-      .sec {
-        margin: 26px 0 12px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 20px;
-        font-weight: 800;
-      }
-      .sec span {
-        font-size: 13px;
-        font-weight: 700;
-        background: #dbe7fc;
-        color: var(--blue);
-        border-radius: 20px;
-        padding: 3px 12px;
-      }
-
-      /* Gate hours */
-      .gates {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 14px;
-      }
-      .gate {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 18px 20px;
-        border-radius: var(--r);
-      }
-      .gate.open {
-        background: var(--c-vesinh);
-      }
-      .gate.close {
-        background: var(--c-antoan);
-      }
-      .gate .ic {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background: #fff;
-        display: grid;
-        place-items: center;
-        font-size: 28px;
-      }
-      .gate small {
-        font-weight: 700;
-        color: var(--muted);
-      }
-      .gate b {
-        display: block;
-        font-size: 32px;
-        line-height: 1.1;
-      }
-
-      /* Filters */
-      .chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-      .chip {
-        border: 2px solid #cfe0fb;
-        background: #fff;
-        color: #1c3a82;
-        font: 700 14px Nunito;
-        padding: 7px 16px;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-      .chip[aria-pressed="true"] {
-        background: var(--blue);
-        border-color: var(--blue);
-        color: #fff;
-      }
-
-      /* Rules */
-      .rules {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-      .rule {
-        display: flex;
-        gap: 14px;
-        padding: 18px;
-        border-radius: var(--r);
-        background: var(--bg-c);
-        border: 1px solid rgba(0, 0, 0, 0.04);
-      }
-      .rule .no {
-        flex: none;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        background: #fff;
-        color: var(--ic);
-        font-weight: 800;
-        font-size: 19px;
-        display: grid;
-        place-items: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      }
-      .rule h3 {
-        font-size: 16px;
-        margin-bottom: 4px;
-        color: var(--navy);
-      }
-      .rule p {
-        font-size: 14.5px;
-        line-height: 1.5;
-        color: #2c3e66;
-      }
-      .tag {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 800;
-        color: var(--ic);
-        background: #fff;
-        border-radius: 20px;
-        padding: 2px 10px;
-        margin-bottom: 6px;
-      }
-      .empty {
-        display: none;
-        padding: 26px;
-        text-align: center;
-        color: var(--muted);
-        font-weight: 600;
-      }
-
-      /* Notice */
-      .warn {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-        padding: 20px;
-        margin-top: 20px;
-        background: #fff7e6;
-        border-color: #ffe2a8;
-      }
-      .warn .ic {
-        font-size: 30px;
-      }
-      .sign {
-        margin-top: 18px;
-        padding: 18px 22px;
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-        align-items: flex-end;
-      }
-      .sign .r {
-        text-align: center;
-        font-weight: 700;
-        line-height: 1.5;
-      }
-      .sign em {
-        display: block;
-        color: var(--blue);
-        font-weight: 600;
-      }
-
-      /* Right column */
-      .aside {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-      .aside .card {
-        padding: 18px;
-      }
-      .aside h2 {
-        font-size: 18px;
-        margin-bottom: 12px;
-      }
-      .sum li {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        padding: 9px 0;
-        border-bottom: 1px dashed var(--line);
-        font-size: 14.5px;
-        font-weight: 600;
-      }
-      .sum li:last-child {
-        border: 0;
-      }
-      .sum b {
-        color: var(--blue);
-      }
-      .dl {
-        display: block;
-        text-align: center;
-        margin-top: 12px;
-        background: #e3edff;
-        color: var(--blue);
-        font-weight: 800;
-        padding: 11px;
-        border-radius: 12px;
-      }
-      .dl:hover {
-        background: #d3e3ff;
-      }
-      .help {
-        background: linear-gradient(135deg, #e8ddff, #f1e9ff);
-        text-align: center;
-        font-weight: 700;
-        color: #4c3a99;
-        line-height: 1.5;
-      }
-      .help b {
-        display: block;
-        font-size: 20px;
-        font-style: italic;
-        margin-bottom: 4px;
-      }
-      .contact p {
-        font-size: 14px;
-        line-height: 1.7;
-        color: #2c3e66;
-      }
-
-      @media (max-width: 1100px) {
-        .wrap {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 860px) {
-        body {
-          grid-template-columns: 1fr;
-        }
-        .side {
-          position: static;
-          height: auto;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: center;
-          padding: 10px;
-        }
-        .logo {
-          padding: 0 8px;
-        }
-        .nav {
-          display: flex;
-          gap: 4px;
-          overflow-x: auto;
-          width: 100%;
-        }
-        .nav a {
-          white-space: nowrap;
-          padding: 9px 12px;
-          margin: 0;
-          font-size: 14px;
-        }
-        .side-foot {
-          display: none;
-        }
-        .top {
-          position: static;
-        }
-        .user div {
-          display: none;
-        }
-        .hero h1 {
-          font-size: 30px;
-        }
-        .hero svg,
-        .hero .note {
-          display: none;
-        }
-        .rules,
-        .gates {
-          grid-template-columns: 1fr;
-        }
-        .wrap {
-          padding: 16px;
-        }
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .chip,
-        .nav a,
-        .dl {
-          transition:
-            background 0.15s,
-            color 0.15s;
-        }
-      }
-    </style>
+    <!-- CSS: chung cho mọi mục + riêng cho mục Nội quy -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/noi-quy.css" />
   </head>
   <body>
-    <aside class="side">
-      <a class="logo" href="#"
-        ><div class="logo-ic">🏠</div>
-        <div>
-          <b>Smart Dorm</b><small>KTX thông minh - Cuộc sống tiện nghi</small>
-        </div></a
-      >
-      <nav class="nav" aria-label="Menu chính">
-        <a href="#">🏠 Trang chủ</a>
-        <a href="#">🛏️ Phòng ở</a>
-        <a href="#"
-          >📢 Thông báo
-          <span class="badge" id="navN" style="display: none"></span
-        ></a>
-        <a href="#">🔧 Báo sửa chữa</a>
-        <a href="#">💰 Tiền phòng</a>
-        <a href="#">📅 Sự kiện</a>
-        <a href="#" class="on" aria-current="page">📖 Nội quy</a>
-        <a href="#">📍 Sơ đồ KTX</a>
-        <a href="#">👤 Tài khoản</a>
-      </nav>
-      <div class="side-foot">KTX<br />là nhà, cùng là thanh xuân ♡</div>
-    </aside>
+    <!-- Hình vẽ tòa nhà KTX dùng lại nhiều nơi (banner + sidebar) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <pattern id="win" width="22" height="26" patternUnits="userSpaceOnUse">
+          <rect x="5" y="6" width="12" height="14" rx="1.5" fill="#5f95e8" />
+        </pattern>
+      </defs>
+      <symbol id="dorm" viewBox="0 0 420 200">
+        <!-- cây -->
+        <circle cx="30" cy="140" r="34" fill="#6fb877" />
+        <circle cx="58" cy="120" r="30" fill="#82c78a" />
+        <circle cx="395" cy="135" r="34" fill="#6fb877" />
+        <circle cx="372" cy="150" r="28" fill="#82c78a" />
+        <!-- tòa nhà -->
+        <rect x="62" y="104" width="100" height="86" fill="#f4d6c0" />
+        <rect x="62" y="98" width="100" height="8" fill="#e9b99c" />
+        <rect x="70" y="112" width="84" height="72" fill="url(#win)" />
+        <rect x="160" y="48" width="170" height="142" fill="#f7dcc8" />
+        <rect x="156" y="42" width="178" height="10" fill="#e5ad8c" />
+        <rect x="168" y="58" width="154" height="116" fill="url(#win)" />
+        <rect x="328" y="86" width="64" height="104" fill="#f4d6c0" />
+        <rect x="324" y="80" width="72" height="8" fill="#e9b99c" />
+        <rect x="334" y="94" width="52" height="86" fill="url(#win)" />
+        <!-- cửa chính -->
+        <rect x="220" y="150" width="50" height="40" rx="3" fill="#3f6fcf" />
+        <rect x="244" y="150" width="2" height="40" fill="#fff" />
+        <!-- mặt đất -->
+        <rect x="0" y="188" width="420" height="12" fill="#8fcf8f" />
+        <!-- bụi cây -->
+        <ellipse cx="190" cy="190" rx="26" ry="9" fill="#5fae6a" />
+        <ellipse cx="300" cy="190" rx="26" ry="9" fill="#5fae6a" />
+      </symbol>
+    </svg>
 
-    <div class="main">
-      <header class="top">
-        <label class="search"
-          ><span aria-hidden="true">🔍</span
-          ><input
-            id="q"
-            type="search"
-            placeholder="Tìm trong nội quy..."
-            aria-label="Tìm trong nội quy"
-        /></label>
-        <div class="sp"></div>
-        <div class="bell" id="bell" aria-label="Thông báo">
-          🔔<i id="bellN" style="display: none"></i>
+    <div class="app">
+      <!-- ===================== SIDEBAR ===================== -->
+      <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-house-chimney-window logo-icon"></i>
+          <div class="logo-text">
+            <strong>Smart Dorm</strong>
+            <small>KTX thông minh - Cuộc sống tiện nghi</small>
+          </div>
+        </a>
+
+        <nav class="menu">
+          <a href="index.html"><i class="fa-solid fa-house"></i> Trang chủ</a>
+          <a href="phong-o.html"><i class="fa-solid fa-bed"></i> Phòng ở</a>
+          <a href="thong-bao.html"
+            ><i class="fa-solid fa-bullhorn"></i> Thông báo
+            <span class="badge">3</span></a
+          >
+          <a href="bao-sua-chua.html"
+            ><i class="fa-solid fa-wrench"></i> Báo sửa chữa</a
+          >
+          <a href="tien-phong.html"
+            ><i class="fa-solid fa-circle-dollar-to-slot"></i> Tiền phòng</a
+          >
+          <a href="su-kien.html"
+            ><i class="fa-solid fa-calendar-days"></i> Sự kiện</a
+          >
+          <a href="noi-quy.html" class="active" aria-current="page"
+            ><i class="fa-solid fa-book-open"></i> Nội quy</a
+          >
+          <a href="so-do-ktx.html"
+            ><i class="fa-solid fa-map-location-dot"></i> Sơ đồ KTX</a
+          >
+          <a href="tai-khoan.html"
+            ><i class="fa-solid fa-user"></i> Tài khoản</a
+          >
+        </nav>
+
+        <div class="sidebar-deco">
+          <p class="quote">
+            KTX<br />&nbsp;&nbsp;Là nhà<br />cùng là thanh xuân ♡
+          </p>
+          <svg viewBox="0 0 420 200"><use href="#dorm" /></svg>
         </div>
-        <div class="user">
-          <div class="avatar" id="uAvatar">👤</div>
-          <div><b id="uName">Khách</b><small id="uId"></small></div>
-        </div>
-      </header>
+      </aside>
+      <div class="overlay" id="overlay"></div>
 
-      <div class="wrap">
-        <main>
-          <section class="hero">
-            <h1>Nội quy Ký túc xá</h1>
-            <p>Cùng thực hiện để KTX luôn an toàn, sạch đẹp và văn minh.</p>
-            <div class="note">Sống đẹp<br />Cùng Smart Dorm ♡</div>
-            <svg
-              viewBox="0 0 400 190"
-              preserveAspectRatio="xMaxYMax meet"
-              aria-hidden="true"
-            >
-              <ellipse cx="60" cy="150" rx="55" ry="40" fill="#7fc07a" />
-              <ellipse cx="350" cy="140" rx="60" ry="45" fill="#6ab56a" />
-              <rect x="120" y="70" width="170" height="120" fill="#f6d9c4" />
-              <rect x="250" y="40" width="80" height="150" fill="#f3cfb5" />
-              <g fill="#4a7bd6">
-                <rect x="135" y="85" width="22" height="20" />
-                <rect x="170" y="85" width="22" height="20" />
-                <rect x="205" y="85" width="22" height="20" />
-                <rect x="135" y="120" width="22" height="20" />
-                <rect x="170" y="120" width="22" height="20" />
-                <rect x="205" y="120" width="22" height="20" />
-                <rect x="265" y="58" width="20" height="20" />
-                <rect x="295" y="58" width="20" height="20" />
-                <rect x="265" y="95" width="20" height="20" />
-                <rect x="295" y="95" width="20" height="20" />
-                <rect x="265" y="132" width="20" height="20" />
-                <rect x="295" y="132" width="20" height="20" />
-              </g>
-              <rect x="120" y="62" width="170" height="8" fill="#e9a07f" />
-              <rect x="0" y="178" width="400" height="12" fill="#8fcf7e" />
-            </svg>
-          </section>
+      <!-- ===================== PHẦN CHÍNH ===================== -->
+      <div class="main-wrap">
+        <!-- Thanh trên cùng -->
+        <header class="topbar">
+          <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
 
-          <h2 class="sec">🕗 Điều 1: Thời gian mở, đóng cổng</h2>
-          <div class="gates">
-            <div class="gate open">
-              <div class="ic">🔓</div>
-              <div><small>Giờ mở cổng</small><b>05:30</b></div>
-            </div>
-            <div class="gate close">
-              <div class="ic">🔒</div>
-              <div><small>Giờ đóng cổng</small><b>23:00</b></div>
-            </div>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="globalSearch"
+              placeholder="Tìm kiếm trong nội quy..."
+              autocomplete="off"
+            />
           </div>
 
-          <h2 class="sec">
-            📋 Điều 2: Quy định sinh hoạt trong khuôn viên KTX
-            <span id="count">11 quy định</span>
-          </h2>
-          <div
-            class="chips"
-            role="group"
-            aria-label="Lọc theo nhóm"
-            id="chips"
-          ></div>
-          <div class="rules" id="rules"></div>
-          <div class="empty card" id="empty">
-            Không tìm thấy quy định phù hợp. Hãy thử từ khóa khác.
+          <div class="top-right">
+            <button class="bell" aria-label="Thông báo">
+              <i class="fa-solid fa-bell"></i><span class="badge">3</span>
+            </button>
+            <div class="user">
+              <div class="avatar">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="user-info">
+                <strong>Nguyễn Phúc Khai Tâm</strong>
+                <small>MSSV: 6651071065</small>
+              </div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
           </div>
+        </header>
 
-          <div class="card warn">
-            <div class="ic">⚠️</div>
-            <div>
-              <b>Xử lý vi phạm</b>
-              <p style="margin-top: 4px; line-height: 1.55">
-                Sinh viên vi phạm nội quy này, tùy theo tính chất, mức độ sẽ bị
-                xem xét xử lý kỷ luật theo quy định hiện hành.
+        <main class="content">
+          <!-- ============ CỘT TRÁI / GIỮA ============ -->
+          <div class="col-main">
+            <!-- Banner -->
+            <section class="hero rules-hero">
+              <span class="cloud c1"></span>
+              <span class="cloud c2"></span>
+              <div class="hero-text">
+                <p class="hero-eyebrow">Smart Dorm</p>
+                <h1 class="hero-title">
+                  <i class="fa-solid fa-book-open"></i> Nội quy KTX
+                </h1>
+                <p class="hero-sub">
+                  Cùng nhau xây dựng môi trường sống văn minh, an toàn!
+                </p>
+              </div>
+              <p class="hero-hand">
+                Sống đúng, sống đẹp<br />Cùng Smart Dorm ♡
               </p>
-            </div>
+              <svg class="hero-building" viewBox="0 0 420 200">
+                <use href="#dorm" />
+              </svg>
+            </section>
+
+            <!-- Điều 1: giờ mở / đóng cổng -->
+            <section
+              class="gate-grid"
+              aria-label="Điều 1 - Thời gian mở, đóng cổng"
+            >
+              <article class="gate-card open">
+                <div class="gate-icon">
+                  <i class="fa-solid fa-door-open"></i>
+                </div>
+                <div>
+                  <p class="gate-label">Điều 1 · Giờ mở cổng</p>
+                  <p class="gate-time">05:30<small>(05 giờ 30 phút)</small></p>
+                  <p class="gate-desc">Cổng KTX mở lại mỗi sáng</p>
+                </div>
+                <span class="gate-tag">Sáng</span>
+              </article>
+              <article class="gate-card close">
+                <div class="gate-icon">
+                  <i class="fa-solid fa-door-closed"></i>
+                </div>
+                <div>
+                  <p class="gate-label">Điều 1 · Giờ đóng cổng</p>
+                  <p class="gate-time">23:00<small>(23 giờ 00 phút)</small></p>
+                  <p class="gate-desc">Sau giờ này cổng đóng, không ra vào</p>
+                </div>
+                <span class="gate-tag">Tối</span>
+              </article>
+            </section>
+
+            <!-- Điều 2: danh sách quy định -->
+            <section class="card" aria-label="Điều 2 - Quy định về sinh hoạt">
+              <div class="rules-head">
+                <h2 class="card-title">
+                  <i class="fa-solid fa-list-check"></i> Điều 2: Quy định về
+                  sinh hoạt trong khuôn viên ký túc xá
+                </h2>
+                <div class="tools no-print">
+                  <button class="btn btn-sm" id="expandAll">
+                    <i class="fa-solid fa-angles-down"></i> Mở tất cả
+                  </button>
+                  <button class="btn btn-sm" id="collapseAll">
+                    <i class="fa-solid fa-angles-up"></i> Thu gọn
+                  </button>
+                  <button class="btn btn-sm btn-primary" id="printBtn">
+                    <i class="fa-solid fa-print"></i> In nội quy
+                  </button>
+                </div>
+              </div>
+
+              <!-- Bộ lọc theo nhóm -->
+              <div class="filters no-print" id="filters">
+                <button class="chip t-all active" data-filter="all">
+                  Tất cả
+                </button>
+                <button class="chip t-cutru" data-filter="cutru">Cư trú</button>
+                <button class="chip t-vesinh" data-filter="vesinh">
+                  Vệ sinh
+                </button>
+                <button class="chip t-antoan" data-filter="antoan">
+                  An toàn - PCCC
+                </button>
+                <button class="chip t-vanhoa" data-filter="vanhoa">
+                  Văn hóa
+                </button>
+                <button class="chip t-anninh" data-filter="anninh">
+                  An ninh trật tự
+                </button>
+              </div>
+              <p class="result-info" id="resultInfo" aria-live="polite"></p>
+
+              <div class="rule-list" id="ruleList">
+                <!-- 1 -->
+                <article class="rule t-cutru" data-cat="cutru">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">1</span>
+                    <span class="rule-title">Hợp đồng nội trú</span>
+                    <span class="rule-tag">Cư trú</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Sinh viên chưa ký hợp đồng nội trú không được ở
+                            trong KTX.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 2 -->
+                <article class="rule t-cutru" data-cat="cutru">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">2</span>
+                    <span class="rule-title">Ở đúng phòng được bố trí</span>
+                    <span class="rule-tag">Cư trú</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li>Ở đúng phòng đã được Ban quản lý KTX bố trí.</li>
+                          <li class="no">
+                            Không tự ý thay đổi hiện trạng các vật dụng trong
+                            phòng.
+                          </li>
+                          <li class="no">
+                            Không sang nhượng chỗ ở cho người khác.
+                          </li>
+                          <li>
+                            Nếu vắng quá 01 ngày tại KTX phải báo với Ban quản
+                            lý KTX.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 3 -->
+                <article class="rule t-cutru" data-cat="cutru">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">3</span>
+                    <span class="rule-title">Tiếp khách và người ngoài</span>
+                    <span class="rule-tag">Cư trú</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">Không tiếp khách trong phòng ở.</li>
+                          <li class="no">
+                            Không cho người ngoài vào phòng khi chưa có sự đồng
+                            ý của Trưởng Ban quản lý KTX.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 4 -->
+                <article class="rule t-vesinh" data-cat="vesinh">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">4</span>
+                    <span class="rule-title">Giữ gìn vệ sinh chung</span>
+                    <span class="rule-tag">Vệ sinh</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li>
+                            Giữ gìn vệ sinh hành lang, ban công, khuôn viên KTX;
+                            phòng ở ngăn nắp, gọn gàng sạch sẽ.
+                          </li>
+                          <li class="no">
+                            Không dán giấy, tranh ảnh, viết, vẽ, đóng đinh trên
+                            tường.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 5 -->
+                <article class="rule t-antoan" data-cat="antoan">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">5</span>
+                    <span class="rule-title"
+                      >An toàn điện và sinh hoạt trong phòng</span
+                    >
+                    <span class="rule-tag">An toàn</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Không treo rèm, không câu mắc điện thiếu an toàn
+                            trong phòng ở.
+                          </li>
+                          <li>Treo, phơi quần áo đúng nơi quy định.</li>
+                          <li class="no">Không nấu nướng trong KTX.</li>
+                          <li class="no">Không hút thuốc lá trong phòng ở.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 6 -->
+                <article class="rule t-vanhoa" data-cat="vanhoa">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">6</span>
+                    <span class="rule-title">Tác phong, văn hóa ứng xử</span>
+                    <span class="rule-tag">Văn hóa</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Không có hành vi, tác phong thiếu văn hóa: nói tục,
+                            chửi thề, khạc nhổ, gây ồn làm ảnh hưởng đến môi
+                            trường sống, …
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 7 -->
+                <article class="rule t-antoan" data-cat="antoan">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">7</span>
+                    <span class="rule-title">Phòng cháy chữa cháy</span>
+                    <span class="rule-tag">An toàn</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li>
+                            Chấp hành nghiêm túc quy định về phòng cháy chữa
+                            cháy.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 8 -->
+                <article class="rule t-anninh" data-cat="anninh">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">8</span>
+                    <span class="rule-title">Giữ gìn an ninh trật tự</span>
+                    <span class="rule-tag">An ninh</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Cấm các hành vi tổ chức gây gổ, kích động hoặc tham
+                            gia đánh nhau gây mất an ninh trật tự.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 9 -->
+                <article class="rule t-anninh" data-cat="anninh">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">9</span>
+                    <span class="rule-title">Rượu, bia và chất kích thích</span>
+                    <span class="rule-tag">An ninh</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Không tổ chức hoặc tham gia uống rượu, bia.
+                          </li>
+                          <li class="no">
+                            Không tàng trữ, sử dụng các loại chất kích thích,
+                            chất gây nghiện.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 10 -->
+                <article class="rule t-anninh" data-cat="anninh">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">10</span>
+                    <span class="rule-title"
+                      >Vũ khí, chất cháy nổ, ấn phẩm cấm</span
+                    >
+                    <span class="rule-tag">An ninh</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li class="no">
+                            Không tàng trữ vũ khí, chất dễ cháy, nổ, các loại ấn
+                            phẩm đồi trụy, phản động, …
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- 11 -->
+                <article class="rule t-cutru" data-cat="cutru">
+                  <button class="rule-btn" aria-expanded="false">
+                    <span class="rule-num">11</span>
+                    <span class="rule-title">Sinh viên ngoại trú</span>
+                    <span class="rule-tag">Cư trú</span>
+                    <i class="fa-solid fa-chevron-down rule-arrow"></i>
+                  </button>
+                  <div class="rule-body">
+                    <div>
+                      <div class="rule-content">
+                        <ul>
+                          <li>
+                            Sinh viên ngoại trú vào sinh hoạt, học tập trong KTX
+                            phải tuân thủ nội quy KTX.
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <div class="empty" id="emptyMsg">
+                <i class="fa-regular fa-face-frown"></i>
+                Không tìm thấy quy định phù hợp. Hãy thử từ khóa khác nhé!
+              </div>
+            </section>
+
+            <!-- Xử lý vi phạm -->
+            <section class="card penalty">
+              <div class="penalty-icon">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div>
+                <h3>Xử lý vi phạm</h3>
+                <p>
+                  Sinh viên vi phạm nội quy này, tùy theo tính chất, mức độ sẽ
+                  bị xem xét xử lý kỷ luật theo quy định hiện hành.
+                </p>
+              </div>
+            </section>
+
+            <!-- Nơi ban hành + chữ ký -->
+            <section class="card issuer">
+              <div class="org">
+                <strong
+                  >Trường Đại học GTVT Phân hiệu tại TP. Hồ Chí Minh</strong
+                >
+                Cộng hòa Xã hội Chủ nghĩa Việt Nam<br />
+                Độc Lập - Tự Do - Hạnh Phúc<br />
+                <em>TP. Hồ Chí Minh, ngày 16 tháng 11 năm 2016</em>
+              </div>
+              <div class="signature">
+                KT. GIÁM ĐỐC<br />PHÓ GIÁM ĐỐC
+                <div class="signed">
+                  <i class="fa-solid fa-circle-check"></i> (Đã ký)
+                </div>
+                <div class="name">TS. Võ Trường Sơn</div>
+              </div>
+            </section>
           </div>
 
-          <div class="card sign">
-            <div style="font-size: 14px; color: var(--muted); font-weight: 600">
-              Trường Đại học GTVT Phân hiệu tại TP. Hồ Chí Minh<br /><em
-                >TP. Hồ Chí Minh, ngày 16 tháng 11 năm 2016</em
+          <!-- ============ CỘT PHẢI ============ -->
+          <aside class="col-side">
+            <!-- Trạng thái cổng theo giờ thực -->
+            <section class="card gate-status">
+              <h2 class="card-title">
+                <i class="fa-solid fa-clock"></i> Trạng thái cổng KTX
+              </h2>
+              <span class="status-pill is-open" id="statusPill"
+                ><span class="dot"></span>
+                <span id="statusText">Cổng đang mở</span></span
               >
-            </div>
-            <div class="r">
-              KT. GIÁM ĐỐC<br />PHÓ GIÁM ĐỐC<em>(Đã ký)</em>TS. Võ Trường Sơn
-            </div>
-          </div>
+              <div class="clock" id="clock">--:--:--</div>
+              <div class="clock-date" id="clockDate"></div>
+              <p class="countdown" id="countdown"></p>
+              <div class="progress"><span id="progressBar"></span></div>
+            </section>
+
+            <!-- Điều cần nhớ -->
+            <section class="card remember">
+              <h2 class="card-title">
+                <i class="fa-solid fa-lightbulb"></i> Điều cần nhớ
+              </h2>
+              <ul>
+                <li>
+                  <span class="ic b"
+                    ><i class="fa-solid fa-door-open"></i
+                  ></span>
+                  Về trước 23:00, cổng đóng sau giờ này.
+                </li>
+                <li>
+                  <span class="ic p"
+                    ><i class="fa-solid fa-user-slash"></i
+                  ></span>
+                  Không tiếp khách trong phòng ở.
+                </li>
+                <li>
+                  <span class="ic y"
+                    ><i class="fa-solid fa-fire-extinguisher"></i
+                  ></span>
+                  Không nấu nướng, không câu mắc điện.
+                </li>
+                <li>
+                  <span class="ic v"><i class="fa-solid fa-bed"></i></span> Vắng
+                  quá 01 ngày phải báo Ban quản lý.
+                </li>
+                <li>
+                  <span class="ic g"><i class="fa-solid fa-broom"></i></span>
+                  Giữ phòng và hành lang sạch sẽ.
+                </li>
+              </ul>
+            </section>
+
+            <!-- Liên hệ -->
+            <section class="card contact">
+              <h2 class="card-title">
+                <i class="fa-solid fa-headset"></i> Cần hỗ trợ?
+              </h2>
+              <p>
+                Nếu chưa rõ quy định hoặc cần xin phép (vắng phòng, tiếp người
+                ngoài…), hãy liên hệ Ban quản lý KTX.
+              </p>
+              <a href="thong-bao.html" class="btn btn-primary"
+                ><i class="fa-solid fa-paper-plane"></i> Liên hệ Ban quản lý</a
+              >
+            </section>
+
+            <section class="cute-note">
+              <h4>Cố lên nhé!</h4>
+              <p>Sống đúng nội quy, KTX là nhà thứ hai của bạn!</p>
+              <span class="cat">🐱</span>
+            </section>
+          </aside>
         </main>
 
-        <aside class="aside">
-          <section class="card">
-            <h2>📖 Tóm tắt nhanh</h2>
-            <ul class="sum">
-              <li>Mở cổng <b>05:30</b></li>
-              <li>Đóng cổng <b>23:00</b></li>
-              <li>Vắng quá <b>01 ngày</b> <span>báo BQL</span></li>
-              <li>Tổng số quy định <b>11</b></li>
-            </ul>
-            <a class="dl" href="#" download>⬇️ Tải bản nội quy (.doc)</a>
-          </section>
-          <section class="card contact">
-            <h2>📞 Cần hỗ trợ?</h2>
-            <p>
-              Liên hệ Ban quản lý KTX để được giải đáp về nội quy, xin phép vắng
-              mặt hoặc tiếp khách.
-            </p>
-            <a class="dl" href="#">Gửi yêu cầu cho BQL</a>
-          </section>
-          <section class="card help">
-            <b>Cố lên nhé!</b>Những ngày tháng ở KTX sẽ là kỷ niệm đẹp nhất! 🐱
-          </section>
-        </aside>
+        <footer class="footer">
+          © 2026 Smart Dorm - KTX thông minh, cuộc sống tiện nghi
+        </footer>
       </div>
     </div>
 
-    <script>
-      const GROUPS = {
-        cutru: {
-          label: "Cư trú & khách",
-          bg: "var(--c-cutru)",
-          ic: "var(--c-cutru-i)",
-        },
-        vesinh: {
-          label: "Vệ sinh",
-          bg: "var(--c-vesinh)",
-          ic: "var(--c-vesinh-i)",
-        },
-        antoan: {
-          label: "An toàn",
-          bg: "var(--c-antoan)",
-          ic: "var(--c-antoan-i)",
-        },
-        anninh: {
-          label: "Ứng xử & an ninh",
-          bg: "var(--c-anninh)",
-          ic: "var(--c-anninh-i)",
-        },
-      };
-      const RULES = [
-        [
-          1,
-          "cutru",
-          "Hợp đồng nội trú",
-          "Sinh viên chưa ký hợp đồng nội trú không được ở trong KTX.",
-        ],
-        [
-          2,
-          "cutru",
-          "Ở đúng phòng được bố trí",
-          "Ở đúng phòng đã được Ban quản lý KTX bố trí. Không tự ý thay đổi hiện trạng các vật dụng trong phòng. Không sang nhượng chỗ ở cho người khác. Nếu vắng quá 01 ngày tại KTX phải báo với Ban quản lý KTX.",
-        ],
-        [
-          3,
-          "cutru",
-          "Tiếp khách",
-          "Không tiếp khách trong phòng ở. Không cho người ngoài vào phòng khi chưa có sự đồng ý của Trưởng Ban quản lý KTX.",
-        ],
-        [
-          4,
-          "vesinh",
-          "Giữ gìn vệ sinh chung",
-          "Giữ gìn vệ sinh hành lang, ban công, khuôn viên KTX; phòng ở ngăn nắp, gọn gàng sạch sẽ. Không dán giấy, tranh ảnh, viết, vẽ, đóng đinh trên tường.",
-        ],
-        [
-          5,
-          "antoan",
-          "Điện, phơi đồ, nấu nướng",
-          "Không treo rèm, không câu mắc điện thiếu an toàn trong phòng ở. Treo, phơi quần áo đúng nơi quy định. Không nấu nướng trong KTX. Không hút thuốc lá trong phòng ở.",
-        ],
-        [
-          6,
-          "anninh",
-          "Tác phong văn hóa",
-          "Không có hành vi, tác phong thiếu văn hóa: nói tục, chửi thề, khạc nhổ, gây ồn làm ảnh hưởng đến môi trường sống, ...",
-        ],
-        [
-          7,
-          "antoan",
-          "Phòng cháy chữa cháy",
-          "Chấp hành nghiêm túc quy định về phòng cháy chữa cháy.",
-        ],
-        [
-          8,
-          "anninh",
-          "Giữ gìn an ninh trật tự",
-          "Cấm các hành vi tổ chức gây gổ, kích động hoặc tham gia đánh nhau gây mất an ninh trật tự.",
-        ],
-        [
-          9,
-          "anninh",
-          "Rượu, bia, chất kích thích",
-          "Không tổ chức hoặc tham gia uống rượu, bia; không tàng trữ, sử dụng các loại chất kích thích, chất gây nghiện.",
-        ],
-        [
-          10,
-          "anninh",
-          "Vật cấm",
-          "Không tàng trữ vũ khí, chất dễ cháy, nổ, các loại ấn phẩm đồi trụy, phản động,...",
-        ],
-        [
-          11,
-          "cutru",
-          "Sinh viên ngoại trú",
-          "Sinh viên ngoại trú vào sinh hoạt, học tập trong KTX phải tuân thủ nội quy KTX.",
-        ],
-      ];
-      const $ = (s) => document.querySelector(s);
-      let group = "all";
-
-      // Chip lọc nhóm
-      $("#chips").innerHTML = [
-        '<button class="chip" data-g="all" aria-pressed="true">Tất cả</button>',
-      ]
-        .concat(
-          Object.entries(GROUPS).map(
-            ([k, g]) =>
-              `<button class="chip" data-g="${k}" aria-pressed="false">${g.label}</button>`,
-          ),
-        )
-        .join("");
-      $("#chips").addEventListener("click", (e) => {
-        const b = e.target.closest(".chip");
-        if (!b) return;
-        group = b.dataset.g;
-        document
-          .querySelectorAll(".chip")
-          .forEach((c) => c.setAttribute("aria-pressed", c === b));
-        render();
-      });
-      $("#q").addEventListener("input", render);
-
-      function norm(s) {
-        return s
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/đ/g, "d");
-      }
-
-      function render() {
-        const q = norm($("#q").value.trim());
-        const list = RULES.filter(
-          ([n, g, t, d]) =>
-            (group === "all" || g === group) &&
-            (!q || norm(t + " " + d).includes(q)),
-        );
-        $("#rules").innerHTML = list
-          .map(
-            ([n, g, t, d]) => `
-    <article class="rule" style="--bg-c:${GROUPS[g].bg};--ic:${GROUPS[g].ic}">
-      <div class="no" aria-hidden="true">${n}</div>
-      <div><span class="tag">${GROUPS[g].label}</span><h3>${t}</h3><p>${d}</p></div>
-    </article>`,
-          )
-          .join("");
-        $("#count").textContent = list.length + " quy định";
-        $("#empty").style.display = list.length ? "none" : "block";
-      }
-      render();
-
-      /* ===== Người dùng đang đăng nhập =====
-   Trang này KHÔNG tự lưu thông tin người dùng.
-   Chỉ cần sửa getCurrentUser() để đọc từ module Tài khoản (API / session / localStorage).
-   Định dạng mong đợi: { fullName: 'Họ và tên', studentId: '6651...', unread: 3 } */
-      function getCurrentUser() {
-        if (window.currentUser) return window.currentUser; // cách 1: module Tài khoản gán sẵn
-        try {
-          return JSON.parse(localStorage.getItem("currentUser"));
-        } catch (e) {
-          // cách 2: đọc từ localStorage
-          return null;
-        }
-        // cách 3: gọi API, ví dụ: fetch('/api/me').then(r => r.json()).then(renderUser)
-      }
-      function renderUser(u) {
-        u = u || getCurrentUser();
-        const name = u && u.fullName ? u.fullName.trim() : "";
-        $("#uName").textContent = name || "Khách";
-        $("#uId").textContent = u && u.studentId ? "MSSV: " + u.studentId : "";
-        $("#uAvatar").textContent = name
-          ? name.split(/\s+/).pop()[0].toUpperCase()
-          : "👤";
-        const n = u && u.unread > 0 ? u.unread : 0;
-        [
-          ["#bellN", "grid"],
-          ["#navN", "inline"],
-        ].forEach(([s, d]) => {
-          const el = $(s);
-          el.textContent = n;
-          el.style.display = n ? d : "none";
-        });
-        $("#bell").setAttribute(
-          "aria-label",
-          n ? n + " thông báo mới" : "Thông báo",
-        );
-      }
-      renderUser();
-    </script>
+    <!-- JS: chung + riêng -->
+    <!-- Chèn ngay phía trên thẻ đóng </body> -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/noi-quy.js"></script>
+</body>
+</html>
   </body>
 </html>
